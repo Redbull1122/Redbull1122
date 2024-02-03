@@ -19,3 +19,5 @@ print(root_childs)
  #   print(item.text)
 #   post_title = soup.find(class = "movie").find_previous_sibling().find_next().text
 #print(post_title)
+
+print("Hello world")
