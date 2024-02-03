@@ -2,32 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 
 
-with open('index.html') as file:
-    src = file.read()
+#with open('index.html') as file:
+ #  src = file.read()
 
+url = 'https://www.python.org/'
+reqs = requests.get(url)
+soup = BeautifulSoup(reqs.text, 'lxml')
 
-soup = BeautifulSoup(src, 'lxml')
+root = soup.html
 
+root_childs = [e.name for e in root.children if e.name is not None]
+print(root_childs)
 
-#find_a = soup.find_all("a")
-#for item in find_a:
- #   item_text = item.text
-  #  item_url = item.get("href")
-   # print(f"{item_text}: {item_url}")
-
-
-
-
-#find_all = soup.find(class_= "social__networks").find("ul").find_all("a")
-
-#for item in find_all:
-#    print(f"{item.text}: {item}")
-
-#find = soup.find("div").find("p").text
-#print(find)
-
-#title = soup.title
-#print(title.string)
 
 #for item in find:
  #   print(item.text)
